@@ -1,35 +1,38 @@
-<html><head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href="https://fonts.googleapis.com/css?family=Chivo:900" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Harmonic-aware Tri-path Convolution Recurrent Network for Singing Voice Separation</title>
 
     <style>
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            align-items: center;
+            margin-bottom: 1px;
+            line-height: 50%;
+        }
 
-      .inline-block {
-          font-size: 0;
-      }
+        .column {
+            flex-basis: 20%;
+            padding: 10px;
 
-      .inline-block > div {
-          font-size: 1rem;
-          margin-right:120px;
-          display: inline-block;
-      }
+        }
+        .audio-text {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .audio-text-contain {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
     </style>
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Harmonic-aware Tri-path Convolution Recurrent Network for Singing Voice Separation</title>
-  </head>
-
-  <body>
+</head>
+<body>
     <div id="container">
-      <div class="inner">
-
         <header>
           <h1>Harmonic-aware Tri-path Convolution Recurrent Network for Singing Voice Separation</h1>
           <h2>Separating mixture audio into background music and vocal.</h2>
@@ -41,179 +44,248 @@
           </h3>
 
           <p>
-            This is the demonstration of the model we proposed(HA-TPCRN), and also shows the results of compared models we trained (DPRNN).
+            This is the demonstration of the model we proposed(HA-TPCRN), and also shows the results of compared models we trained (DPCRN, DPRNN, SpleeterDeepUNet).
           </p>
 
           <hr>
           <div>
-     
-	<div>
-        
+    <div>
 
-          <div class="inline-block">
-             
-             <div>
-             	<p><b>Demo 1</b></p>
-             	<p>Mixture</p>
-             	<audio controls="">
-                <source src="DEMO/DSD100_38/mix_38.wav" type="audio/wav">
-              	Your browser does not support the audio element.
-             	</audio>
-             </div>
-
-             <div>
-             	<p><b>Demo 2</b></p>
-             	<p>Mixture</p>
-             	<audio controls="">
+    <div class="row">
+        <div class="column">
+            <p class="audio-text audio-title">Demo 1 </p>
+            <p>Mixture</p>
+            <audio controls style>
                 <source src="DEMO/DSD100_43/mix_34.wav" type="audio/wav">
-              	Your browser does not support the audio element.
-              	</audio>
-             </div>
-
-
-             <div>
-             	<p><b>Demo 3</b></p>
-             	<p>Mixture</p>
-             	<audio controls="">
-                <source src="DEMO/DSD100_14/mix_14.wav" type="audio/wav">
-              	Your browser does not support the audio element.
-              	</audio>
-             </div>
-
-
-         </div>
-         
-
-          <div class="inline-block">
-
-             <div>
-		<p>Separated vocal (The proposed HA-TPCRN)</p>
-             	<audio controls="">
-                <source src="DEMO/DSD100_38/TPCRN(Proposed)/est_vocal_K=2.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-             	 </audio>
-            </div>
-
-
-            <div>
-		<p>Separated vocal (The proposed HA-TPCRN)</p>
-             	<audio controls="">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <p class="audio-text">HA-TPCRN (The Proposed Model) </p>
+            <p>Separated vocal</p>
+            <audio controls style>
                 <source src="DEMO/DSD100_43/TPCRN(Proposed)/est_vocal_K=2.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-              	</audio>
-            </div>
-
-           <div>
-		<p>Separated vocal (The proposed HA-TPCRN)</p>
-             	<audio controls="">
-                <source src="DEMO/DSD100_14/TPCRN(Proposed)/est_vocal_TPCRN_K=2.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-              	</audio>
-            </div>
-
-         </div>
-
-
-         <div class="inline-block">
-
-             <div>
-		<p>Separated music (The proposed HA-TPCRN)</p>
-             	<audio controls="">
-                <source src="DEMO/DSD100_38/TPCRN(Proposed)/est_instrument_K=2.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-             	 </audio>
-            </div>
-
-
-            <div>
-		<p>Separated music (The proposed HA-TPCRN)</p>
-             	<audio controls="">
-                <source src="DEMO/DSD100_43/TPCRN(Proposed)/est_instrument_K=2.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-              	</audio>
-            </div>
-
-           <div>
-		<p>Separated music (The proposed HA-TPCRN)</p>
-             	<audio controls="">
-                <source src="DEMO/DSD100_14/TPCRN(Proposed)/est_instrument_TPCRN_K=2.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-              	</audio>
-            </div>
-
-         </div>
-
-
-         <div class="inline-block">
-
-             <div>
-		<p>Separated vocal (DPRNN)</p>
-             	<audio controls="">
-                <source src="DEMO/DSD100_38/DPRNN/est_vocal_DPRNN.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-             	 </audio>
-            </div>
-
-
-            <div>
-		<p>Separated vocal (DPRNN)</p>
-             	<audio controls="">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p class="audio-text">DPCRN </p>
+            <p>Separated vocal</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_43/DPCRN/est_vocal_DPCRN.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p class="audio-text">DPRNN</p>
+            <p>Separated vocal</p>
+            <audio controls style>
                 <source src="DEMO/DSD100_43/DPRNN_r4/est_vocal_DPRNN.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-              	</audio>
-            </div>
-
-           <div>
-				<p>Separated vocal (DPRNN)</p>
-             	<audio controls="">
-                <source src="DEMO/DSD100_14/DPRNN_r4/est_vocal_DPRNN.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-              	</audio>
-            </div>
-
-         </div>
-
-
-
-         <div class="inline-block">
-
-            <div>
-		<p>Separated music (DPRNN)</p>
-             	<audio controls="">
-                <source src="DEMO/DSD100_38/DPRNN/est_instrument_DPRNN.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-             	 </audio>
-            </div>
-
-
-            <div>
-		<p>Separated music (DPRNN)</p>
-             	<audio controls="">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p class="audio-text">SpleeterDeepUNet</p>
+            <p>Separated vocal</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_43/SpleeterDeepUNet/est_vocal_DeepUNet.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
+                <source src="DEMO/DSD100_43/TPCRN(Proposed)/est_instrument_K=2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
+                <source src="DEMO/DSD100_43/DPCRN/est_instrument_DPCRN.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
                 <source src="DEMO/DSD100_43/DPRNN_r4/est_instrument_DPRNN.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-              	</audio>
-            </div>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
+                <source src="DEMO/DSD100_43/SpleeterDeepUNet/est_instrument_DeepUNet.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <hr>
 
-           <div>
-		<p>Separated music (DPRNN)</p>
-             	<audio controls="">
+ <div class="row">
+        <div class="column">
+            <p class="audio-text">Demo 2 </p>
+            <p>Mixture</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_38/mix_38.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <p class="audio-text">HA-TPCRN (The Proposed Model) </p>
+            <p>Separated vocal</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_38/TPCRN(Proposed)/est_vocal_K=2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p class="audio-text">DPCRN </p>
+            <p>Separated vocal</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_38/DPCRN/est_vocal_DPCRN.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p class="audio-text">DPRNN</p>
+            <p>Separated vocal</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_38/DPRNN_r4/est_vocal_DPRNN.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p class="audio-text">SpleeterDeepUNet</p>
+            <p>Separated vocal</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_38/SpleeterDeepUNet/est_vocal_DeepUNet.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
+                <source src="DEMO/DSD100_38/TPCRN(Proposed)/est_instrument_K=2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
+                <source src="DEMO/DSD100_38/DPCRN/est_instrument_DPCRN.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
+                <source src="DEMO/DSD100_38/DPRNN_r4/est_instrument_DPRNN.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
+                <source src="DEMO/DSD100_38/SpleeterDeepUNet/est_instrument_DeepUNet.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+<hr>
+
+ <div class="row">
+        <div class="column">
+            <p class="audio-text">Demo 3 </p>
+            <p>Mixture</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_14/mix_14.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <p class="audio-text">HA-TPCRN (The Proposed Model) </p>
+            <p>Separated vocal</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_14/TPCRN(Proposed)/est_vocal_TPCRN_K=2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p class="audio-text">DPCRN </p>
+            <p>Separated vocal</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_14/DPCRN/est_vocal_DPCRN.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p class="audio-text">DPRNN</p>
+            <p>Separated vocal</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_14/DPRNN_r4/est_vocal_DPRNN.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p class="audio-text">SpleeterDeepUNet</p>
+            <p>Separated vocal</p>
+            <audio controls style>
+                <source src="DEMO/DSD100_14/SpleeterDeepUNet/est_vocal_DeepUNet.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
+                <source src="DEMO/DSD100_14/TPCRN(Proposed)/est_instrument_TPCRN_K=2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
+                <source src="DEMO/DSD100_14/DPCRN/est_instrument_DPCRN.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
                 <source src="DEMO/DSD100_14/DPRNN_r4/est_instrument_DPRNN.wav" type="audio/wav">
-             	 Your browser does not support the audio element.
-              	</audio>
-            </div>
-
-         </div>
-
-
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="column">
+            <p>Separated music</p>
+            <audio controls>
+                <source src="DEMO/DSD100_14/SpleeterDeepUNet/est_instrument_DeepUNet.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
 
     <hr>
         
 
-          </div>
-        <footer>
-          This website is maintained by <a href="https://github.com/victoriatw">Ya-Ching Lai</a><br>
+    </div>
+    <footer>
+         This website is maintained by <a href="https://github.com/victoriatw">Ya-Ching Lai</a><br>
     
-        </footer>
+    </footer>
 
         
       </div>
@@ -221,3 +293,6 @@
   
 
 </body></html>
+
+</body>
+</html>
